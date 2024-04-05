@@ -18,3 +18,8 @@
 .two-column>*:nth-child(2) {
   flex: 1;
 }
+
+.image-wrapper img.me-photo {
+  max-width: 100%;
+  height: 60%;
+}
