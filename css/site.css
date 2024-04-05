@@ -44,7 +44,7 @@ canvas {
 
 .fullscreen-box button {
   font-size: 0.6em;
-  background-color: white; /* Set button background color to white */
+  background-color: rgb(0, 0, 0); /* Set button background color to white */
   color: black; /* Set button text color to black */
   padding: 5px 10px; /* Adjust button padding */
   border: none; /* Remove button border */
