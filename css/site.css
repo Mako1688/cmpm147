@@ -1,22 +1,22 @@
 h1, h2 {
   margin: 0;
   padding: 0;
-  /* font-size: 1.2em; */
-  font-weight: lighter;
+  color: white; /* Set text color to white */
+  font-weight: bold; /* Make headings bold */
 }
 
 #content {
   width: calc(100% - 30px);
-  margin: 10px;080;
+  margin: 10px;
   padding: 10px;
-  border: solid 1px #808;
+  border: solid 1px white; /* Set border color to white */
   font-family: sans-serif;
 }
 
 .minor-section {
   margin: 10px;
   padding: 10px;
-  border: solid 1px #A0A0A0;
+  border: solid 1px white; /* Set border color to white */
   border-radius: 10px;
 }
 
@@ -54,4 +54,29 @@ body.is-fullscreen #canvas-container {
   height: 100vh !important;
   margin: 0; /* Remove any default margins */
   z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Add a soft gradient of green */
+body {
+  background: linear-gradient(to right, rgba(0,255,0,0), rgba(0,255,0,0.5)); /* Define a gradient from transparent to semi-transparent green */
+}
+
+.fullscreen-box {
+  text-align: right; /* Align the button to the right */
+  margin-top: 0.25em;
+}
+
+.fullscreen-box button {
+  font-size: 0.6em;
+  background-color: white; /* Set button background color to white */
+  color: black; /* Set button text color to black */
+  padding: 5px 10px; /* Adjust button padding */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for color change */
+}
+
+.fullscreen-box button:hover {
+  background-color: black; /* Change background color on hover */
+  color: white; /* Change text color on hover */
 }
