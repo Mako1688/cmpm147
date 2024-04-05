@@ -61,3 +61,7 @@ body {
   color: white;
   background: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 146, 0)); /* Define a gradient from transparent to semi-transparent green */
 }
+
+p {
+  color: white;
+}
