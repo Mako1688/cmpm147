@@ -19,8 +19,8 @@ let waveOffsetY = 0;
 
 let shipOffsetX = 0;
 let shipOffsetY = 0;
-const width = 800;
-const height = 400;
+const width = 1200;
+const height = 600;
 
 let shipDLW;
 let shipURW;

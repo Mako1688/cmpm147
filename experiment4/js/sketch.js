@@ -55,7 +55,12 @@ function preload(){
   console.log(land);
   castle = loadImage('./img/castle.png');
   console.log(castle);
+
+  if (window.p3_preload) {
+    window.p3_preload(shipDL, shipUR, shipUL, shipDR, waveDL, waveUR, waveUR1, waveUR2, waveUR3, land, castle);
+  }
 }
+
 function worldToScreen([world_x, world_y], [camera_x, camera_y]) {
   let i = (world_x - world_y) * tile_width_step_main;
   let j = (world_x + world_y) * tile_height_step_main;
@@ -93,9 +98,7 @@ function worldOffsetToCamera([world_x, world_y]) {
   return new p5.Vector(camera_x, camera_y);
 }
 
-if (window.p3_preload) {
-  window.p3_preload(shipDL, shipUR, shipUL, shipDR, waveDL, waveUR, waveUR1, waveUR2, waveUR3, land, castle);
-}
+
 
 function resizeScreen() {
   centerHorz = canvasContainer.width() / 2; // Adjusted for drawing logic
@@ -114,7 +117,6 @@ function setup() {
     resizeScreen();
   });
   resizeScreen();
-
 
   camera_offset = new p5.Vector(-width / 2, height / 2);
   camera_velocity = new p5.Vector(0, 0);
@@ -254,7 +256,7 @@ function drawTile([world_x, world_y], [camera_x, camera_y]) {
   push();
   translate(0 - screen_x, screen_y);
   if (window.p3_drawTile) {
-    window.p3_drawTile(world_x, world_y, -screen_x, screen_y , land, waveUR2, waveUR1, castle, shipDL, shipUR, shipUL, shipDR);
+    window.p3_drawTile(world_x, world_y, land, waveUR2, waveUR1, castle, shipDL, shipUR, shipUL, shipDR);
   }
   pop();
 }
