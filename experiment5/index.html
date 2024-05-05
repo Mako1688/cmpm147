@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Experiment 5 - Evolutionary Impressions</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Load jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+	<!-- Load p5.js library -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+
+	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" DEFEsR></script>
+	<!-- Use me for a p5.js project -->
+	<script type="text/javascript" src="./js/my_design.js" DEFER></script>
+	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+	<main id="content">
+		<section>
+
+			<h1>Experiment 5 - Evolutionary Impressions</h1>
+
+			<div class="minor-section results">
+                <div class="results-top">
+                    <div class="image-container">
+                        <p id="original"></p>
+                    </div>
+                    <div class="image-container">
+                        <p id="active"></p>
+                        <p>Active Image</p>
+                    </div>
+                    <div class="image-container">
+                        <p id="best"></p>
+                        <p>Best Image</p>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="controls-col1">
+                        <select id="dropper"></select>
+                        <button id="restart">
+                        restart
+                        </button>
+                        <p>
+                        Mutation rate (<span id="rate"></span>%):<br /><input
+                            id="slider"
+                            type="range"
+                            min="1"
+                            max="100"
+                            value="100"
+                        />
+                        </p>
+                    </div>
+                    <div class="controls-col2">
+                        <p>Active score: <span id="activeScore"></span></p>
+                        <p>Exploration rate: <span id="fpsCounter"></span> fps</p>
+                        <p>Best score: <span id="bestScore"></span></p>
+                    </div>
+                </div>
+
+                <div class="results-bottom">
+                    <p id="memory" data-max-items="28"></p>
+                </div>
+			</div>
+
+			<div class="minor-section">
+				<h2>Description</h2>
+				<p>This is a generator that directly reads inspiring images, renders parameterized images, and adjusts its own designs to optimize an evaluation score. It mutates paramters in order to closer resemble the desired image.</p>
+			</div>
+
+			<div class="minor-section">
+				<h2>Technical</h2>
+                <ol>
+                    <li>This project integrates 6 different inspiring images that are selectable from the drop-down on the display page. Each image highlights a potential stregnth and weakness of the program.</li>
+                    <li>The design object is initialized in inspiration-specific ways. Selecting different inspirations should lead to different behaviors of initDesign.</li>
+                    <li>The design is rendered in a way that can possibly produce results that feel related to the inspiring images. If we squint we are able to percieve the image.</li>
+                    <li>The mutation process makes incremental changes to the design. The parameters of design change based on the image but are always: x, y, fill, w, h, rotation, numPoints, and opacity. The rate parameter is implemented in a way that allows the user to almost stop exploration by sliding the rate down to 1%.</li>
+                </ol>
+			</div>
+			<div class="minor-section">
+				<h2>Reflection</h2>
+				<p>I am very happy with how the generator turned out. I used many different methods of generation and as a result felt very excited to see how they would play out. This assignment really helped me understand the mutation process of images and shapes and I feel very good about using this method in the future.</p>
+			</div>
+
+		</section>
+		<nav id="links" class="minor-section">
+			<!-- Put link back to homepage here. -->
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+		</nav>
+	</main>
+</body>
+</html>
